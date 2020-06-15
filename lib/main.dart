@@ -27,7 +27,7 @@ class _StoryPageState extends State<StoryPage> {
         //TODO: Step 1 - Add background.png to this Container as a background image.
        decoration: BoxDecoration(
          image:DecorationImage(
-           image: AssetImage('image/background.png'),
+           image: AssetImage('images/background.png'),
            fit:BoxFit.cover,
 
          ),
