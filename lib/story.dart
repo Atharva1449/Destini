@@ -5,14 +5,14 @@
 //TODO: Step 4 - Create a Constructor for this class to be able to initialise the properties created in step 3.
 class Story {
   String storytext;
-  String choice1;
-  String choice2;
+  String choice1c;
+  String choice2c;
   
-Story(String storytextc,String choice1c,String choice2c)
+Story({String storyTitle,String choice1,String choice2})
 {
-  storytext=storytextc;
-  choice1=choice1c;
-  choice2=choice2c;
+  storytext=storyTitle;
+  choice1c=choice1;
+  choice2c=choice2;
 }
 
 }
