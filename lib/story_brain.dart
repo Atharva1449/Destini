@@ -60,8 +60,9 @@ List<Story> _storyData = [
       choice1: 'Restart',
       choice2: '')
 ];
-
 String getStory(){
-  return _storyData[1].storytext;
+  return _storyData[0].storytext;
 }
+String getChoice1(){return _storyData[0].choice1c;}
+String getChoice2(){return _storyData[0].choice2c;}
 }
