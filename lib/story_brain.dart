@@ -62,13 +62,31 @@ List<Story> _storyData = [
       choice2: '')
 ];
 String getStory(){
-  return _storyData[0].storytext;
+  return _storyData[storyNumber].storytext;
 }
-String getChoice1(){return _storyData[0].choice1c;}
-String getChoice2(){return _storyData[0].choice2c;}
+String getChoice1(){return _storyData[storyNumber].choice1c;}
+String getChoice2(){return _storyData[storyNumber].choice2c;}
 
-int nextStory(int choiceNumber){
- return choiceNumber;
+ void nextStory(int choiceNumber){
+  if(choiceNumber==1 && storyNumber==0){
+    storyNumber=2;
+  }
+  if(choiceNumber==2 && storyNumber==0){
+    storyNumber=1;
+  }
+  if(choiceNumber==1 && storyNumber==1){
+    storyNumber=2;
+  }
+  if(choiceNumber==2 && storyNumber==1){
+    storyNumber=3;
+  }
+  if(choiceNumber==1 && storyNumber==2){
+    storyNumber=5;
+  }
+  if(choiceNumber==2 && storyNumber==2){
+    storyNumber=4;
+  }
 }
+
 
 }
