@@ -29,6 +29,7 @@ import 'story.dart';
 
 //TODO: Step 27 - Create a method called buttonShouldBeVisible() which checks to see if storyNumber is 0 or 1 or 2 (when both buttons should show choices) and return true if that is the case, else it should return false.
 class StoryBrain{
+  var storyNumber=0;
 List<Story> _storyData = [
   Story(
       storyTitle:
@@ -65,4 +66,9 @@ String getStory(){
 }
 String getChoice1(){return _storyData[0].choice1c;}
 String getChoice2(){return _storyData[0].choice2c;}
+
+int nextStory(int choiceNumber){
+ return choiceNumber;
+}
+
 }
