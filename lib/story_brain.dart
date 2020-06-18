@@ -29,7 +29,7 @@ import 'story.dart';
 
 //TODO: Step 27 - Create a method called buttonShouldBeVisible() which checks to see if storyNumber is 0 or 1 or 2 (when both buttons should show choices) and return true if that is the case, else it should return false.
 class StoryBrain{
-  var storyNumber=0;
+  var _storyNumber=0;
 List<Story> _storyData = [
   Story(
       storyTitle:
@@ -62,29 +62,48 @@ List<Story> _storyData = [
       choice2: '')
 ];
 String getStory(){
-  return _storyData[storyNumber].storytext;
+  return _storyData[_storyNumber].storytext;
 }
-String getChoice1(){return _storyData[storyNumber].choice1c;}
-String getChoice2(){return _storyData[storyNumber].choice2c;}
+String getChoice1(){return _storyData[_storyNumber].choice1c;}
+String getChoice2(){return _storyData[_storyNumber].choice2c;}
 
- void nextStory(int choiceNumber){
-  if(choiceNumber==1 && storyNumber==0){
-    storyNumber=2;
+ int nextStory(int choiceNumber){
+  if(choiceNumber==1 && _storyNumber==0){
+    return _storyNumber=2;
   }
-  if(choiceNumber==2 && storyNumber==0){
-    storyNumber=1;
+  if(choiceNumber==2 && _storyNumber==0){
+    return _storyNumber=1;
   }
-  if(choiceNumber==1 && storyNumber==1){
-    storyNumber=2;
+  if(choiceNumber==1 && _storyNumber==1){
+    return _storyNumber=2;
   }
-  if(choiceNumber==2 && storyNumber==1){
-    storyNumber=3;
+  if(choiceNumber==2 && _storyNumber==1){
+    return _storyNumber=3;
   }
-  if(choiceNumber==1 && storyNumber==2){
-    storyNumber=5;
+  if(choiceNumber==1 && _storyNumber==2){
+    return _storyNumber=5;
   }
-  if(choiceNumber==2 && storyNumber==2){
-    storyNumber=4;
+  if(choiceNumber==2 && _storyNumber==2){
+    return _storyNumber=4;
+  }
+  if(choiceNumber==1 && _storyNumber==5){
+    return _storyNumber=0;
+  }
+  if(choiceNumber==1 && _storyNumber==4){
+    return _storyNumber=0;
+  }
+  if(choiceNumber==1 && _storyNumber==3){
+    return _storyNumber=0;
+  }
+}
+bool buttonShouldBeVisible()
+{
+  if(_storyNumber==3||_storyNumber==4||_storyNumber==5)
+  {
+    return true;
+  }
+  else{
+    return false;
   }
 }
 
